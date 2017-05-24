@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>JSbásico</title>
+	<style type="text/css">
+	
+	*{
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 200px;
+	}
+	</style>
+	
+	<script>
+		function trocaLetra(caracter){
+			switch(caracter){
+				case "T":
+					return "P";
+				case "t":
+					return "p";
+				case "e":
+					return "o";
+				case "E":
+					return "O";
+				case "n":
+					return "l";
+				case "N":
+					return "L";
+				case "i":
+					return "a";
+				case "I":
+					return "A";
+				case "s":
+					return "r";
+				case "S":
+					return "R";
+				case "P":
+					return "T";
+				case "p":
+					return "t";
+				case "o":
+					return "e";
+				case "O":
+					return "E";
+				case "l":
+					return "n";
+				case "L":
+					return "N";
+				case "a":
+					return "i";
+				case "A":
+					return "I";
+				case "r":
+					return "s";
+				case "R":
+					return "s";	
+				
+				default: return (caracter);
+			}
+		}
+		
+		function criptografar(){
+			var frase = document.getElementById("frase").value;
+			var fraseCriptografada = "";
+			for(var i=0; i<frase.length; i++){
+				var letra = frase.charAt(i);
+				var letraCripto = trocaLetra(letra);
+				fraseCriptografada = fraseCriptografada + letraCripto;
+			}
+			document.getElementById("msg").innerHTML = fraseCriptografada;
+		}
+	</script>
+	
+</head>
+<body>
+
+	<form>
+		<input type="text" id="frase" />
+		<br/>
+		<input type="button" onclick="criptografar()" value="Criptografar"/>
+	</form>
+	<h1 id="msg"></h1>
+</body>
+</html>
